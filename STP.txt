@@ -1,0 +1,40 @@
+問1
+ルートブリッジ　switch3
+
+問2
+switch1-switch2ルートパスコスト　19
+switch1-switch3ルートパスコスト　100
+switch2-switch4ルートパスコスト　100
+switch3-switch4ルートパスコスト　100
+
+ルートポート
+
+switch1の場合
+
+switch1-switch3とswitch1-switch2-switch4-switch3どちらかがルートポート
+↓
+switch1-switch3がルートパスコスト(19)が小さい為F0/2がルートポート
+
+switch2の場合
+
+switch2-switch1-switch3とswitch2-switch4-switch3どちらかがルートポート
+↓
+switch2-switch1-switch3がルートパスコスト(100+19＝119)が小さい為F0/1がルートポート
+
+switch4の場合
+
+switch4-switch3とswitch4-switch2-switch1-switch3どちらかがルートポート
+↓
+switch4-switch3がルートパスコスト(100)が小さい為E0/2がルートポート
+
+指定ポート
+ルートブリッジの全てのポートは指定ポートになるため　　switch3のE0/1、E0/2ともに指定ポート
+switch1の場合
+RPの向かい側が指定ポートなので、F0/1が指定ポート
+switch2.switch4の場合
+RPの向かい側が指定ポートなので、switch2のF0/2とswitch4のE0/1どちらかが指定ポート
+↓
+ブリッジIDが小さいswitch4のE0/1が指定ポート
+
+ブロッキングポート
+最後に残ったswitch2のF0/2がブロッキングポート
